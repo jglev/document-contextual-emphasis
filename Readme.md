@@ -83,3 +83,11 @@ becomes:
 ```
 
 This rendered HTML is somewhat cumbersome to read; however, it is straightforward to read, as each closing `</span>` tag is given a comment explaining which tag it closes. Further, the HTML is derived from an original markdown document, which is easier to read and maintain!
+
+# Example
+
+You can render the example markdown using (from Bash):
+
+```
+scripts/content_processing/compile_faq_with_screen_reader_text.sh examples/markdown.md examples/faq_questions_list.yaml > examples/example_rendered.html
+```
