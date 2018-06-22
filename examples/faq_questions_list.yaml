@@ -1,0 +1,9 @@
+# Format:
+#
+# - question-code: "Question text"
+#
+# Question codes cannot have spaces.
+
+- example-1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+- example-2: "Duis tristique, elit a efficitur mattis, velit ante placerat dui, ac semper nisi risus non nunc."
+- example-3: "Aliquam sed tellus quis libero tempor iaculis in ut ex."

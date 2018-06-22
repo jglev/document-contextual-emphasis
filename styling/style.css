@@ -1,0 +1,39 @@
+.hidden-notice-for-screen-readers {
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:10000px;
+}
+
+#list-of-questions {
+    margin-top: 1em;
+}
+
+#list-of-questions ul {
+    margin: 0;
+}
+
+.question {
+    cursor: pointer;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+#list-of-questions {
+  background: white;
+  padding: 1em;
+  width: 20%;
+  height: 100%;
+  overflow: scroll;
+  right: 0%;
+  top: 0%;
+  position: fixed;
+  font-family: 'Gentium Basic', serif;
+}
+
+#introduction,
+#faq-searchable-content {
+  width: 75%;
+}

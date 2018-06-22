@@ -1,0 +1,48 @@
+# From https://github.com/Grayda/gitlab-doc-builder
+
+build_pdf_and_docx:
+  # before_script:
+    # Note that software installation is handled in the Dockerfile for the image for this container, as it's unclear to me as of this writing how to get the gitlab-runner image working with root privileges (for software installation).
+  script:
+    # Runs pandoc on all .md files in the repo and outputs them as PDF and DOCX. It then also compiles them into HTML FAQs.
+    - find . -name '*.md' -not -path "./examples/*" -exec sh -c './scripts/remove_tags.sh $0 | pandoc -f markdown -t docx -o $(basename "$0" .md).docx' {} \;
+    - find . -name '*.md' -not -path "./examples/*" -exec sh -c './scripts/remove_tags.sh $0 | kramdown --output pdf > $(basename "$0" .md).pdf' {} \;
+  artifacts:
+    # Attach all untracked files (e.g. files that were recently created and not yet committed to git) as artifacts.
+    # These are the files you then download after the job has finished.
+    untracked: true
+    expire_in: 100 yrs
+  only:
+    # Only run on the master branch
+    - master
+
+build_misc_html:
+  # before_script:
+    # Note that software installation is handled in the Dockerfile for the image for this container, as it's unclear to me as of this writing how to get the gitlab-runner image working with root privileges (for software installation).
+  script:
+    - cat about-page.md | python3 ./scripts/parse_markdown_faq_tags.py | pandoc -f markdown -t html -o about-page.html;
+  artifacts:
+    # Attach all untracked files (e.g. files that were recently created and not yet committed to git) as artifacts.
+    # These are the files you then download after the job has finished.
+    untracked: true
+    expire_in: 100 yrs
+  only:
+    # Only run on the master branch
+    - master
+
+build_html_with_faq:
+  # before_script:
+    # Note that software installation is handled in the Dockerfile for the image for this container, as it's unclear to me as of this writing how to get the gitlab-runner image working with root privileges (for software installation).
+  script:
+    # - find . -name '*.md' -not -path "./examples/*" -exec sh -c 'cat $0 | python3 ./scripts/parse_markdown_faq_tags.py | pandoc -f markdown -t html -o $0.html' {} \;
+    # - find . -name 'faq_questions_list.yaml' -exec sh -c 'cat $0 | python3 ./scripts/parse_faq_questions_yaml.py > faq_questions_list.html' {} \;
+    - ./scripts/compile_faq_with_screen_reader_text.sh privacy-policy.md > privacy-policy.html
+    - ./scripts/compile_faq_with_screen_reader_text.sh data-practices.md > data-practices.html
+  artifacts:
+    # Attach all untracked files (e.g. files that were recently created and not yet committed to git) as artifacts.
+    # These are the files you then download after the job has finished.
+    untracked: true
+    expire_in: 100 yrs
+  only:
+    # Only run on the master branch
+    - master
