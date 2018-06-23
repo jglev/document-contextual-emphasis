@@ -5,7 +5,7 @@ Description:
   Parse yaml with the format
       - question-code: "Question text"
   into
-      <ul>
+      <ul class="list">
         <li><a class="question" question-id="question-code" href="">Question text</a></li>
       </ul>
 
