@@ -63,3 +63,10 @@ h3 {
 #faq-searchable-content {
   width: 75%;
 }
+
+@media only screen and (max-width: 800px) {
+  #list-of-questions {
+    width: 75%;
+    position: relative;
+  }
+}
