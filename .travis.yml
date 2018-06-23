@@ -1,0 +1,5 @@
+language: python
+sudo: false
+addons:
+  apt_packages:
+- pandoc
