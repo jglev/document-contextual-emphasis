@@ -38,6 +38,10 @@
   margin: 0;
 }
 
+#list-of-questions a {
+  color: #01256e;
+}
+
 .question {
   cursor: pointer;
 }

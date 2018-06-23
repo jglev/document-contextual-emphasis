@@ -24,11 +24,15 @@ jQuery(document).ready(function($) {
     var light_color = "rgb(203, 202, 202)"; // Light grey (See, e.g., http://htmlcolorcodes.com/)
     var dark_color = "rgb(0, 0, 0)"; // Black
     
+    var link_clicked_color = "rgb(149, 0, 26)";
+    
     $('div#faq-searchable-content').css("color", dark_color); // Set a default color for the container.
     //$('div#faq-searchable-content').removeAttr("aria-activedescendant"); // Tell screen-readers that this is not hidden.
     
     var dom_elements_relevant_to_current_question; // This will get filled in later. It will allow us to reset DOM elements from previous quesiton-selections on each new click of a question.
     var dom_elements_relevant_to_previous_question;
+    var previously_clicked_link;
+    var previously_clicked_color;
     
     function find_relevant_dom_elements(question_id_marker){
         
@@ -84,6 +88,19 @@ jQuery(document).ready(function($) {
 
         event.preventDefault(); // Stop the link from doing anything that it normally would.
         
+        if(previously_clicked_link != null){ // If this is the user's first time clicking a question, previously_clicked_link won't have anything in it, so we can skip the animation below.
+            $( previously_clicked_link ).animate({
+                color: previously_clicked_color
+            }, fade_time);
+        };
+        
+        previously_clicked_link = $(this);
+        previously_clicked_color = $(this).css("color");
+        
+        $( this ).animate({
+            color: link_clicked_color
+        }, fade_time );
+        
         dom_elements_relevant_to_previous_question = dom_elements_relevant_to_current_question;
         
         question_id = $(this).attr('question-id');
@@ -107,6 +124,12 @@ jQuery(document).ready(function($) {
     $( "#question-highlight-reset-button" ).click(function(event) {
 
         event.preventDefault(); // Stop the link from doing anything that it normally would.
+        
+        if(previously_clicked_link != null){ // If this is the user's first time clicking a question, previously_clicked_link won't have anything in it, so we can skip the animation below.
+            $( previously_clicked_link ).animate({
+                color: previously_clicked_color
+            }, fade_time);
+        };
 
         $('div#faq-searchable-content').animate({
             color: dark_color
