@@ -6,7 +6,7 @@ This repository is a fork-able template for creating a web page for a document t
 
 For an example of this, see [here](https://publicus.github.io/document-contextual-emphasis/).
 
-![Example screencast](example-screencast.gif)
+![Example screencast](example_screencast.gif)
 
 ## Setup
 
