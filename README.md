@@ -89,5 +89,7 @@ This rendered HTML is somewhat cumbersome to read; however, it is straightforwar
 You can render the example markdown using (from Bash):
 
 ```
-scripts/content_processing/compile_faq_with_screen_reader_text.sh examples/markdown.md examples/faq_questions_list.yaml > example_rendered.html
+scripts/content_processing/compile_faq_with_screen_reader_text.sh
 ```
+
+You can adjust settings in the top of that script file.
