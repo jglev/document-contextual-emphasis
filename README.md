@@ -1,4 +1,12 @@
-# Policy documents + Transformation Scripts
+# "Document Contextual Emphasis"
+
+Embed a searchable FAQ in a document such as a privacy policy 
+
+This repository is a fork-able template for creating a web page for a document that has an embedded FAQ in it, and automatically publishing that page through [GitHub Pages](https://pages.github.com/).
+
+For an example of this, see [here](https://publicus.github.io/document-contextual-emphasis/).
+
+![Example screencast](example-screencast.gif)
 
 ## Setup
 
