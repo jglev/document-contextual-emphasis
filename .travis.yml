@@ -17,6 +17,6 @@ addons:
   apt_packages:
     - pandoc
 install:
-  - pip install yaml
+  - pip install pyyaml
 script:
   - bash ./scripts/content_processing/compile_faq_with_screen_reader_text.sh > index.html
