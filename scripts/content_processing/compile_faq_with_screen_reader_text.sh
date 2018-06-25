@@ -20,6 +20,8 @@ yaml_file="content/faq_questions_list.yaml"
 
 # Processing steps ------------------------------------------------------------------------
 
+set -e  # Immediately exit and give an error if anything fails.
+
 echo -e \
 "$(cat "$html_wrapper_location/standalone_page_opening_html.html")" \
 "\n"\
