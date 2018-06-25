@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python3.6
 """Parse markdown for a command shortcode
 
 Description:
@@ -19,10 +19,14 @@ Usage:
 """
 
 # from docopt import docopt
-import re
+import logging
 import sys
+import re
 
-print(f'Running this script using Python version {sys.version}...')
+logging.getLogger().setLevel(logging.INFO)
+
+logging.info(
+        'Running this script using Python version ' + sys.version[:5] + '...')
 
 # Note that these are also coded in several places below:
 # You can find them by searching this file for "# Tag definition"
