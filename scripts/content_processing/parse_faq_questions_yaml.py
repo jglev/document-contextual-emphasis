@@ -1,4 +1,4 @@
-#!/usr/bin/python3.6
+#!/usr/bin/python3
 """Parse a yaml list into an HTML list of links.
 
 Description:
