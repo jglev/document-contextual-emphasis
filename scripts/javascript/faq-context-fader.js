@@ -5,9 +5,10 @@
 //////////////////////////////////////
 jQuery(document).ready(function($) {
     
-    // Display the privacy-policy-questions div:
-    $("div#privacy-policy-questions").css("display", ""); // Remove the "display: hidden" CSS element that is set by default on the privacy-policy-questions div, now that we know that javascript is enabled.
-            
+    // Now that we know that javascript is enabled, change some display options that were preset for in case js was not enabled:
+    $(".hide-without-javascript").css("display", "inherit");
+    $(".hide-with-javascript").css("display", "none"); // Remove the "display: hidden" CSS element that is set by default on the list-of-questions div, now that we know that javascript is enabled.
+    
     //////////////////////////////////////
     // List of questions fuzzy search
     //////////////////////////////////////

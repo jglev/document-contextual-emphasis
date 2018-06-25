@@ -1,14 +1,17 @@
 <div class="hidden-notice-for-screen-readers">
     <h4>Notes for users of screen readers:</h4>
     <ul>
-      <li>Below, there is a search box, followed by a bullet-list of questions. When you type in the search box, the list will hide items that do not match your search term.</li>
+      <li>Below, <noscript>if javascript is turned on,</noscript> there is a search box, followed by a bullet-list of questions. When you type in the search box, the list will hide items that do not match your search term.</li>
       <li>Below the list of questions is the full text of our Privacy Policy. When you click on a question, the text of the Privacy Policy fades out except for the portions that are relevant to that question. Therefore, when you click on a question, just those relevant portions of the Privacy Policy, which have not faded away, will be read to you.</li>
       <li>At the very bottom of the list is a link to reset the full text to be its normal color. This link just makes the text appear as it did when the page was first loaded; because it is not highlighting any specific portions of text, clicking on that link will not trigger any portion to be automatically read.</li>
-      <noscript><li>Note that the search box and question-links will not work unless Javascript is turned on, however.</li></noscript>
+      <noscript><li>Note that the search box and question-links will not be shown, and will not work, unless Javascript is turned on, however.</li></noscript>
     </ul>
   </div>
 </div>
-<div id="list-of-questions">
+
+<p class="hide-with-javascript"><b>If you would like to browse a Frequenty Asked Questions version of this document, please enable Javascript and refresh the page.</b></p>
+
+<div id="list-of-questions" class="hide-without-javascript"> <!-- We will initially not display this, in case Javascript is disabled, and will instead use the noscript element above. Javascript will then show this element if javascript is enabled. -->
 <form><label for="question-search-input-box"><i>Search for a question here, or just click one below:</i></label>
 <input class="fuzzy-search" id="question-search-input-box" name="question-search-input-box" type="text" /></form>
 <hr />

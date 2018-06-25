@@ -74,3 +74,11 @@ h3 {
     position: relative;
   }
 }
+
+.hide-without-javascript {
+  display: none;
+}
+
+.hide-with-javascript {
+  display: inherit;
+}
