@@ -1,28 +1,41 @@
 #!/bin/bash
 
-# This script expects two arguments:
+# Render all 
 # 
-# 1. A markdown file to parse and place in a larger context of files.
-# 2. A YAML file defining FAQ shortcodes and text.
+# This script does not expect any arguments. Settings can be changed below, in the "Settings" section.
+# 
+# The script will use markdown (*.md) files in introduction_directory and then content_directory in alphabetical order within
+# each of those directories.
 # 
 # Example usage:
-# scripts/content_processing/compile_faq_with_screen_reader_text.sh examples/example_markdown.md examples/faq_questions_list.yaml
+# scripts/content_processing/compile_faq_with_screen_reader_text.sh > example_rendered.html
+
+# Settings --------------------------------------------------------------------------------
 
 html_wrapper_location="html_wrappers"
 scripts_location="scripts/content_processing"
+introduction_directory="content/non-tagged_introduction_sections"
+content_directory="content/tagged_document_sections"
+yaml_file="content/faq_questions_list.yaml"
+
+# Processing steps ------------------------------------------------------------------------
 
 echo -e \
 "$(cat "$html_wrapper_location/standalone_page_opening_html.html")" \
 "\n"\
-"$(cat "$html_wrapper_location/list_of_questions_opening_html.html")" \
+"$(cat "$html_wrapper_location/list_of_questions_opening_start_html.html")" \
 "\n"\
-"$(cat "$2" | "$scripts_location/parse_faq_questions_yaml.py")" \
+"$(cat "$introduction_directory/"*.md | pandoc -f markdown -t html)" \
+"\n"\
+"$(cat "$html_wrapper_location/list_of_questions_opening_end_html.html")" \
+"\n"\
+"$(cat "$yaml_file" | "$scripts_location/parse_faq_questions_yaml.py")" \
 "\n"\
 "$(cat "$html_wrapper_location/list_of_questions_closing_html.html")" \
 "\n"\
 "$(cat "$html_wrapper_location/tagged_content_opening_html.html")" \
 "\n"\
-"$(cat "$1" | "$scripts_location/parse_markdown_faq_tags.py" | pandoc -f markdown -t html)" \
+"$(cat "$content_directory/"*.md | "$scripts_location/parse_markdown_faq_tags.py" | pandoc -f markdown -t html)" \
 "\n"\
 "$(cat "$html_wrapper_location/tagged_content_closing_html.html")" \
 "\n"\
