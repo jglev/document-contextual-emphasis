@@ -1,4 +1,4 @@
-#!/usr/bin/python3.6.5
+#!/usr/bin/python3
 """Parse markdown for a command shortcode
 
 Description:
