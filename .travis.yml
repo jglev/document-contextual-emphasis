@@ -1,3 +1,11 @@
+# See https://docs.travis-ci.com/user/deployment/pages/
+# See also https://gist.github.com/willprice/e07efd73fb7f13f917ea
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $t  # Set in the Travis CI settings page of your repository, as a secure variable
+  keep-history: true
 branches:
   only:
     - master
@@ -10,3 +18,5 @@ addons:
     - pandoc
 install:
   - pip install yaml
+script:
+  - bash ./scripts/content_processing/compile_faq_with_screen_reader_text.sh > index.html
