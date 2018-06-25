@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python3.6
 """Parse a yaml list into an HTML list of links.
 
 Description:
@@ -20,6 +20,9 @@ Usage:
 """
 
 import yaml
+import sys
+
+print(f'Running this script using Python version {sys.version}...')
 
 
 def translate_yaml_into_faq_question_list(yaml_string):
