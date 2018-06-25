@@ -22,7 +22,7 @@ Usage:
 import yaml
 import sys
 
-print(f'Running this script using Python version {sys.version}...')
+print('Running this script using Python version ' + sys.version[:3] + '...')
 
 
 def translate_yaml_into_faq_question_list(yaml_string):

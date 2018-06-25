@@ -20,6 +20,9 @@ Usage:
 
 # from docopt import docopt
 import re
+import sys
+
+print(f'Running this script using Python version {sys.version}...')
 
 # Note that these are also coded in several places below:
 # You can find them by searching this file for "# Tag definition"
