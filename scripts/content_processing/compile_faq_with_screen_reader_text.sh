@@ -31,13 +31,13 @@ echo -e \
 "\n"\
 "$(cat "$html_wrapper_location/list_of_questions_opening_end_html.html")" \
 "\n"\
-"$(cat "$yaml_file" | "$scripts_location/parse_faq_questions_yaml.py")" \
+"$(cat "$yaml_file" | python3.6 "$scripts_location/parse_faq_questions_yaml.py")" \
 "\n"\
 "$(cat "$html_wrapper_location/list_of_questions_closing_html.html")" \
 "\n"\
 "$(cat "$html_wrapper_location/tagged_content_opening_html.html")" \
 "\n"\
-"$(cat "$content_directory/"*.md | "$scripts_location/parse_markdown_faq_tags.py" | pandoc -f markdown -t html)" \
+"$(cat "$content_directory/"*.md | python3.6 "$scripts_location/parse_markdown_faq_tags.py" | pandoc -f markdown -t html)" \
 "\n"\
 "$(cat "$html_wrapper_location/tagged_content_closing_html.html")" \
 "\n"\
