@@ -29,7 +29,7 @@ For an example of this, see [here](https://publicus.github.io/document-contextua
 
 ### Give that token to Travis CI
 
-1. Go to https://travis-ci.org/profile/publicus
+1. Go to https://travis-ci.org/profile/[your-github-profile-name] (for example, if your github username is publicus, go to https://travis-ci.org/profile/publicus)
 	1. You may need to sign in through GitHub, and click through a screen to give Travis CI access to parts of your account.
 1. Look for your copy of the repository ("document-contextual-emphasis"). Click the slider next to it, so that it becomes a check mark.
 1. Click "Settings" next to the check mark you just clicked.
@@ -39,18 +39,29 @@ For an example of this, see [here](https://publicus.github.io/document-contextua
 		- Name: `t`
 		- Value: [Your GitHub "Personal Access Token" from above]
 		- Make sure that "Display value in build log" is an X, **not a check mark.**
+	- Click "Add" next to the environment variable you just filled in.
 
 ### Make a change
 
-1. In GitHub, in the `master` branch of your forked copy of the repository, try making and committing a change to any of the files in the `content` (or `html_wrappers` -- really, any) directories.
-1. If you didn't make the change directly in GitHub's interface, push the changes to the `master` branch on GitHub.
+1. In the `master` branch of your forked copy of the repository, try making and committing a change to any of the files in the `content` (or `html_wrappers` -- really, any) directories.
+	1. To edit a file directly within the GitHub web interface:
+		1. Within the GitHub page for your forked copy of the repository, to access (for example) the `non-tagged_introduction.md` file, click on `content`, then on `non-tagged_introduction_sections`, and then on `non-tagged_introduction.md`.
+		1. Click on the Pen / Edit icon to edit the file directly within GitHub.
+		1. When you have made some edits, scroll to the bottom of the page.
+			1. Under "Commit changes," you can enter a short reminder message to summarize the changes you made.
+			1. Make sure that "Commit directly to the `master` branch" is selected.
+			1. Click "Commit changes."
+	1. If you made changes the changes outside of GitHub's interface, push the changes to the `master` branch on GitHub.
 1. Go back to the Travis CI Settings page for the repository (for example, https://travis-ci.org/publicus/document-contextual-emphasis/settings).
 	1. Click "Build History." If all is working, you should see a status update about a build happening.
-	1. You can view the output of the build by clicking on it, to check whether any errors occurred.
+	1. The build may take a minute or so to start, and another minute or more to complete.
+	1. You can view the output of the build by clicking on it (for example, a link that says "#1...", "#2..." etc., depending on how many builds Travis CI has previously completed for this repository, to check whether any errors occurred.
 
 ### View the rendered page
 
 If your repository is at https://github.com/publicus/document-contextual-emphasis/, go to https://publicus.github.io/document-contextual-emphasis/ to see your rendered document.
+
+Readers can see the history of changes in your document at (for example, for username publicus) https://github.com/publicus/document-contextual-emphasis/commits/master.
 
 ## Contents
 
