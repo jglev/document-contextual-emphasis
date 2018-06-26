@@ -8,6 +8,33 @@ For an example of this, see [here](https://publicus.github.io/document-contextua
 
 ![Example screencast](example_screencast.gif)
 
+## Motivation
+
+Documents such as privacy policies can be dense to read and difficult to understand. Users often do not read these types of documents, at least in part because of documents' length and impenetrable wording.
+
+### Other approaches
+
+Several approaches exist for facilitating user understanding of long or technical documents.
+
+[**Facebook's Data Policy**](https://www.facebook.com/policy.php), for example, features a **Table of Contents,** the top-level items for which are **phrased as questions** (for example, "What kinds of information do we collect?"). Bullet points below each question in the Table of Contents provide a summary of that section's content. While this approach does make the document easier to read than presenting a large block of text, in this approach, sections are conceptually separated from one another: this approach communicates that each section of the document is not relevant to other sections of the document. Put differently, in this approach, each section / question is assumed not to overlap with any others. Facebook's Data Policy page also does not facilitate users viewing changes in the Policy over time.
+
+[LinkedIn's Privacy Policy](https://www.linkedin.com/legal/privacy-policy) features a Table of Contents, with summary annotations in the margins of the document. LinkedIn also provides two summaries: a ["Privacy Policy Summary"](https://www.linkedin.com/legal/privacy-policy-summary) document, and a [video](https://www.youtube.com/watch?v=CFlHncdSYO4) explaining its approach to its Privacy Policy. For viewing changes over time, LinkedIn additionally provides an innovative "guided tour," which presents step-by-step overlays explaining changes to each part of the docuemtn. However, this view does not show side-by-side language changes.
+
+While not for a Privacy Policy, Creative Commons has taken an approach of producing a [completely separate summary document](https://creativecommons.org/licenses/by/4.0/) for each of its [technical license texts](https://creativecommons.org/licenses/by/4.0/legalcode). This approach seems useful for quickly communicating to users, but likely discourages users from reading the block of legal text of the actual license (which users would likely be unable to substantively comprehend).
+
+### "Document Contextual Emphasis"
+
+We introduce an additional approach for facilitating reader comprehension of technical or otherwise dense documents: "document contextual emphasis." In this approach, a Frequently Asked Questions list is embedded *within* a document. When a question from the list is clicked, the snippets of the document relevant to that question -- from entire sections to individual words or phrases. In this approach, **sections of the document can be conceptualized as relevant to multiple questions:** the same section of a text could be relevant to a question about sharing data with law enforcement officials, a question about sharing data more generally, and a question about what information about users is retained, for example.
+
+This approach, as implemented here, carries several benefits:
+
+- **It encourages users to read the actual policy text,** by highlighting sections that are relevant to the user's interests and needs.
+- **It combines questions phrased in non-technical language with technical document text,** providing, in the interface itself, a layer of translation to facilitate comprehension of the document. Even if a user cannot comprehend the document text, seeing a section of the text highlighted in response to a non-technically-worded question relevant to the user could allow the user to ask for assistance from others in a more targeted way than would otherwise be likely.
+- **It provides original context:** Users can see the context of all highlighted portions of text. Non-highlighted portions of the document can be copied and pasted alongside highlighted portions.
+- **Document text is straightforward to update.** As implemented here, documents are written in [Markdown](https://daringfireball.net/projects/markdown/basics), a syntax for marking up documents that is designed to be easier to read than HTML, and is quick to learn (likely in 20-30 minutes of reading).
+- **Change history is preserved.** Because documents are written in Markdown, their history of changes can be saved using [Git](https://guides.github.com/introduction/git-handbook/), the technology on which [GitHub](https://github.com) is built.
+- **The display is screen-reader friendly:** Users accessing a document rendered with this approach using a screen reader will receive an [explanatory overview of the page](https://github.com/publicus/document-contextual-emphasis/search?q=%27class%3D%22hidden-notice-for-screen-readers%22%27&unscoped_q=%27class%3D%22hidden-notice-for-screen-readers%22%27) in several places. Further, thanks to consultation from [Kate Lynch](https://github.com/kelynch), screen readers across platforms will voice highlighted phrases when a question is clicked.
+
 ## Setup
 
 ### Create a copy of this repository
