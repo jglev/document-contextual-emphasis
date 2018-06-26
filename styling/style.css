@@ -68,7 +68,7 @@ h3 {
   width: 75%;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 600px) {
   #list-of-questions {
     width: 75%;
     position: relative;
